@@ -8,11 +8,8 @@
     --color-card: #1a1a1a;
     --color-text: #ffffff;
     --color-primary: #f8e71c;
-    /* Yellow */
     --color-secondary: #00ffff;
-    /* Cyan */
     --color-accent: #ff00ff;
-    /* Pink */
     --color-muted: #888888;
     --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-heading: 'Spamton', 'Segoe UI', sans-serif;
@@ -29,13 +26,14 @@ body {
     color: var(--color-text);
     font-family: var(--font-main);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 60px;
+    padding: 0 20px;
 }
 
 .flex-between {
@@ -65,7 +63,6 @@ body {
     font-weight: bold;
 }
 
-/* Navbar */
 .navbar {
     background: #000;
     border-bottom: 2px solid var(--color-primary);
@@ -75,24 +72,24 @@ body {
 .logo-img {
     height: 60px;
     display: block;
+    max-width: 100%;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 25px;
 }
 
 .nav-phone {
     font-size: 0.8rem;
     font-weight: bold;
     color: var(--color-muted);
-    margin-left: 30px;
 }
 
 .nav-links a {
     color: var(--color-text);
     text-decoration: none;
-    margin-right: 25px;
     font-weight: 600;
     font-size: 0.9rem;
 }
@@ -105,9 +102,8 @@ body {
     cursor: pointer;
 }
 
-/* Hero Listing */
 .hero-listing {
-    padding: 60px 0;
+    padding: 40px 0;
     background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
 }
 
@@ -139,6 +135,7 @@ body {
     margin-bottom: 10px;
     letter-spacing: -1px;
     line-height: 1.2;
+    word-break: break-word;
 }
 
 .domain-tagline {
@@ -171,6 +168,7 @@ body {
     font-size: 3.5rem;
     font-weight: 800;
     color: var(--color-primary);
+    line-height: 1;
 }
 
 .price .currency {
@@ -189,35 +187,37 @@ body {
     background: var(--color-primary);
     color: #000;
     border: none;
-    padding: 15px 40px;
+    padding: 15px 20px;
     font-size: 1.1rem;
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
     flex: 1;
+    white-space: nowrap;
 }
 
 .btn-secondary {
     background: transparent;
     border: 2px solid var(--color-primary);
     color: var(--color-primary);
-    padding: 15px 40px;
+    padding: 15px 20px;
     font-size: 1.1rem;
     font-weight: bold;
     border-radius: 4px;
     cursor: pointer;
     flex: 1;
+    white-space: nowrap;
 }
 
 .trust-signals {
     font-size: 0.85rem;
     color: var(--color-muted);
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
-/* Details Section */
 .details {
     padding: 60px 0;
     border-top: 1px solid #222;
@@ -242,7 +242,7 @@ body {
 
 .payment-methods {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 10px;
     margin-top: 15px;
 }
@@ -252,9 +252,9 @@ body {
     padding: 10px;
     font-size: 0.8rem;
     border-radius: 4px;
+    text-align: center;
 }
 
-/* Trust Bar */
 .trust-bar {
     padding: 40px 0;
     background: #000;
@@ -277,7 +277,6 @@ body {
     font-weight: bold;
 }
 
-/* Footer */
 .footer {
     padding: 40px 0;
     color: var(--color-muted);
@@ -294,21 +293,76 @@ body {
     margin: 0 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .navbar {
+        padding: 10px 0;
+    }
 
-    .grid-2,
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .logo-img {
+        height: 40px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .nav-links a {
+        margin: 0;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    .btn-signin {
+        padding: 4px 12px;
+        font-size: 0.85rem;
+    }
+
+    .nav-phone {
+        display: none;
+    }
+
     .hero-flex {
-        grid-template-columns: 1fr;
         flex-direction: column;
         text-align: center;
+        gap: 30px;
     }
 
     .domain-name {
         font-size: 2.5rem;
     }
 
-    .purchase-card {
-        padding: 20px;
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .trust-bar .flex-around {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .domain-name {
+        font-size: 2rem;
+    }
+
+    .price {
+        font-size: 2.8rem;
     }
 
     .actions {
