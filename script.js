@@ -5,7 +5,7 @@
 
 function handleBuy() {
     console.log("Purchase intent: cgcristi.xyz");
-    alert("NOW'S YOUR CHANCE TO BE A [BIG SHOT]!\n\nTo complete your purchase of cgcristi.xyz for 9,999 KROMER, please contact our sales office at: 1-800-BIG-SHOT\n\nSales rep: SPAMTON G. SPAMTON");
+    alert("NOW'S YOUR CHANCE TO BE A [BIG SHOT]!\n\nTo complete your purchase of cgcristi.xyz for 9,999 KROMER, please contact our sales office at: +1-659-213-5159\n\nSales rep: SPAMTON G. SPAMTON");
 }
 
 function handleOffer() {

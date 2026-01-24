@@ -72,14 +72,21 @@ body {
     padding: 15px 0;
 }
 
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    color: var(--color-text);
+.logo-img {
+    height: 60px;
+    display: block;
 }
 
-.logo .bracket {
-    color: var(--color-primary);
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-phone {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--color-muted);
+    margin-left: 30px;
 }
 
 .nav-links a {
